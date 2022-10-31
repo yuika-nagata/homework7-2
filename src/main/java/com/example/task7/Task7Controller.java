@@ -23,8 +23,8 @@ public class Task7Controller {
     }
 
     @PostMapping("/names")
-    public ResponseEntity<Map<String, String>> create(@RequestBody @Validated CreateForm form) {
-        URI url = UriComponentsBuilder.fromUriString("http://localhost:8080")
+    public ResponseEntity<Map<String, String>> create(@RequestBody @Validated CreateForm form,UriComponentsBuilder uriBuilder) {
+        URI url = uriBuilder
                 .path("/name/id")
                 .build()
                 .toUri();
